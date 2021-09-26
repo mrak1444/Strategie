@@ -4,6 +4,7 @@ using UnityEngine;
 public class MouseInteractionsHandler : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
+    [SerializeField] private SelectableValue _selectedObject;
 
     private void Update()
     {
@@ -16,14 +17,10 @@ public class MouseInteractionsHandler : MonoBehaviour
         {
             return;
         }
-        var mainBuilding = hits
-                .Select(hit => hit.collider.GetComponentInParent<MainBuilding>())
-                .Where(c => c != null)
-                .FirstOrDefault();
-        if (mainBuilding == default)
-        {
-            return;
-        }
-        mainBuilding.ProduceUnit();
+        var selectable = hits
+                    .Select(hit => hit.collider.GetComponentInParent<ISelectable>())
+                    .Where(c => c != null)
+                    .FirstOrDefault();
+        _selectedObject.SetValue(selectable);
     }
 }
