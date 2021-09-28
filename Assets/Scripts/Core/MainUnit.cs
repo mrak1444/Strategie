@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainUnit : MonoBehaviour, ISelectable
+public class MainUnit : CommandExecutorBase<IProduceUnitCommand>, ISelectable
 {
 	public float Health => _health;
 	public float MaxHealth => _maxHealth;
@@ -10,4 +10,9 @@ public class MainUnit : MonoBehaviour, ISelectable
 	[SerializeField] private Sprite _icon;
 
 	private float _health = 100;
+
+    public override void ExecuteSpecificCommand(IProduceUnitCommand command)
+    {
+        throw new System.NotImplementedException();
+    }
 }
