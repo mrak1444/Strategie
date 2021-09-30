@@ -40,9 +40,38 @@ public class CommandButtonsPresenter : MonoBehaviour
         var unitProducer = commandExecutor as CommandExecutorBase<IProduceUnitCommand>;
         if (unitProducer != null)
         {
-            unitProducer.ExecuteSpecificCommand(_context.Inject(new ProduceUnitCommand()));
+            unitProducer.ExecuteSpecificCommand(_context.Inject(new ProduceUnitCommandHeir()));
             return;
         }
+
+        var attack = commandExecutor as CommandExecutorBase<IAttackCommand>;
+        if(attack != null)
+        {
+            attack.ExecuteSpecificCommand(_context.Inject(new AttackCommand()));
+            return;
+        }
+
+        var move = commandExecutor as CommandExecutorBase<IMoveCommand>;
+        if(move != null)
+        {
+            move.ExecuteSpecificCommand(_context.Inject(new MoveCommand()));
+            return;
+        }
+
+        var patrol = commandExecutor as CommandExecutorBase<IPatrolCommand>;
+        if (patrol != null)
+        {
+            patrol.ExecuteSpecificCommand(_context.Inject(new PatrolCommand()));
+            return;
+        }
+
+        var stop = commandExecutor as CommandExecutorBase<IStopCommand>;
+        if (stop != null)
+        {
+            stop.ExecuteSpecificCommand(_context.Inject(new StopCommand()));
+            return;
+        }
+
         throw new ApplicationException($"{nameof(CommandButtonsPresenter)}.{nameof(onButtonClick)}: Unknown type of commands executor: {commandExecutor.GetType().FullName}!");
     }
 }
