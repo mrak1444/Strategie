@@ -4,6 +4,7 @@ public class CommandExecutorAttack : CommandExecutorBase<IAttackCommand>
 {
     public override void ExecuteSpecificCommand(IAttackCommand command)
     {
-        Debug.Log($"{name} - Attack");
+        command.SelecAttack.Health = 10;
+        Debug.Log($"{name} inflict 10 points of damage!");
     }
 }

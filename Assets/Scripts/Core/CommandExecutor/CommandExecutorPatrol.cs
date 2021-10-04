@@ -6,6 +6,6 @@ public class CommandExecutorPatrol : CommandExecutorBase<IPatrolCommand>
 {
     public override void ExecuteSpecificCommand(IPatrolCommand command)
     {
-        Debug.Log($"{name} - Patrol");
+        Debug.Log($"{name} moves from {transform.position} to {command.To}");
     }
 }

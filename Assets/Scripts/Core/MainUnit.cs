@@ -2,7 +2,18 @@ using UnityEngine;
 
 public class MainUnit : MonoBehaviour, ISelectable
 {
-	public float Health => _health;
+	public float Health 
+	{
+        get
+        {
+			return _health;
+
+		}
+        set
+        {
+			_health -= value;
+        }
+	}
 	public float MaxHealth => _maxHealth;
 	public Sprite Icon => _icon;
 
