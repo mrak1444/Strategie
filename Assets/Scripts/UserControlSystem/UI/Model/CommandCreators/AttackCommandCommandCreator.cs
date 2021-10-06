@@ -8,12 +8,12 @@ public class AttackCommandCommandCreator : CommandCreatorBase<IAttackCommand>
 	private Action<IAttackCommand> _creationCallback;
 
 	[Inject]
-	private void Init(SelectableValue groundClicks)
+	private void Init(AttackableValue groundClicks)
 	{
 		groundClicks.OnNewValue += onNewValue;
 	}
 
-	private void onNewValue(ISelectable selecAttack)
+	private void onNewValue(IAttackable selecAttack)
 	{
 		_creationCallback?.Invoke(_context.Inject(new AttackCommand(selecAttack)));
 		_creationCallback = null;
