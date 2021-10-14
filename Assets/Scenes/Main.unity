@@ -701,8 +701,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 918159546}
   - {fileID: 439690241}
+  - {fileID: 918159546}
   - {fileID: 439690241}
   _installerPrefabs: []
   _autoRun: 1
@@ -1142,8 +1142,8 @@ GameObject:
   - component: {fileID: 439690239}
   - component: {fileID: 439690238}
   - component: {fileID: 439690237}
-  - component: {fileID: 439690242}
   - component: {fileID: 439690241}
+  - component: {fileID: 439690242}
   - component: {fileID: 439690243}
   m_Layer: 5
   m_Name: Canvas
