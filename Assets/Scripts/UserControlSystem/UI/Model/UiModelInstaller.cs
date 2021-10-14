@@ -14,6 +14,8 @@ public class UiModelInstaller : MonoInstaller
 		Container.Bind<Vector3Value>().FromInstance(_vector3Value);
 		Container.Bind<SelectableValue>().FromInstance(_selectableValue);
 		Container.Bind<AttackableValue>().FromInstance(_attackableValue);
+		Container.Bind<float>().WithId("Chomper").FromInstance(5f);
+		Container.Bind<string>().WithId("Chomper").FromInstance("Chomper");
 
 		Container.Bind<CommandCreatorBase<IProduceUnitCommand>>()
 		.To<ProduceUnitCommandCommandCreator>().AsTransient();

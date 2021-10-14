@@ -16,3 +16,4 @@ MonoBehaviour:
   _vector3Value: {fileID: 11400000, guid: 72fe5cce77a2759409be7d043d4e3e0d, type: 2}
   _selectableValue: {fileID: 11400000, guid: 897265a47cd72fa46ab02e4395ad4ed0, type: 2}
   _attackableClicksRMB: {fileID: 11400000, guid: 00000d4cd1a98bd4395f85816585ad7e, type: 2}
+  _chomperSprite: {fileID: 21300000, guid: c40931837ffea0c40944d1f2c5cac1de, type: 3}
