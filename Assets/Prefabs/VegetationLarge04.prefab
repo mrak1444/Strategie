@@ -172,7 +172,10 @@ GameObject:
   m_Component:
   - component: {fileID: 596137044777763349}
   - component: {fileID: 596137044759074485}
-  - component: {fileID: 815389481007477902}
+  - component: {fileID: 8819374427700675971}
+  - component: {fileID: 3809351256705139109}
+  - component: {fileID: 2341180386734523443}
+  - component: {fileID: 8096983943299807462}
   m_Layer: 0
   m_Name: VegetationLarge04
   m_TagString: Untagged
@@ -224,7 +227,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 596137044775469299}
   m_Enabled: 1
---- !u!114 &815389481007477902
+--- !u!114 &8819374427700675971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596137044777475637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad4e103f405954e833f85f54b78c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitsParent: {fileID: 0}
+--- !u!114 &3809351256705139109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,10 +253,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 2341180386734523443}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
+--- !u!114 &2341180386734523443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596137044777475637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75cb450e89a36a146af4f9ed3dd3d1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8096983943299807462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596137044777475637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e1e50bbaa142a47a577caa47d2bf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596137044777475639
 GameObject:
   m_ObjectHideFlags: 0
