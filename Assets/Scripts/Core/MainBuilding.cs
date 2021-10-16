@@ -1,7 +1,6 @@
-using System.Threading.Tasks;
 using UnityEngine;
 
-public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectable, IAttackable
+public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
 {
 	public float Health
 	{
@@ -13,6 +12,7 @@ public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectabl
 		set
 		{
 			_health -= value;
+			Debug.Log(Health);
 		}
 	}
 	public float MaxHealth => _maxHealth;
@@ -20,20 +20,8 @@ public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectabl
 
     public Transform PivotPoint => transform;
 
-    [SerializeField] private Transform _unitsParent;
-
 	[SerializeField] private float _maxHealth = 1000;
 	[SerializeField] private Sprite _icon;
 
 	private float _health = 1000;
-
-	public override async Task ExecuteSpecificCommand(IProduceUnitCommand command)
-	{
-		await Task.Run(() => Instant(command));
-	}
-
-	private void Instant(IProduceUnitCommand command)
-    {
-		Instantiate(command.UnitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
-	}
 }
