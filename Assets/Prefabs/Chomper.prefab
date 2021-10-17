@@ -2705,6 +2705,9 @@ GameObject:
   - component: {fileID: 1581357526082124486}
   - component: {fileID: 6654013192489549353}
   - component: {fileID: 256158346832461023}
+  - component: {fileID: 6056187796852803235}
+  - component: {fileID: 1679709528736504560}
+  - component: {fileID: 3633731377708094389}
   m_Layer: 0
   m_Name: Chomper
   m_TagString: Untagged
@@ -2815,6 +2818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stop: {fileID: 256158346832461023}
   _animator: {fileID: 2196615433346867207}
+  _stopCommandExecutor: {fileID: 0}
 --- !u!114 &2780893176823689254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2874,6 +2878,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 6654013192489549353}
+--- !u!114 &6056187796852803235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196615433339442117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbab9a3b98c18d4097825680675a248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1679709528736504560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196615433339442117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 3633731377708094389}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &3633731377708094389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196615433339442117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c575081de6b3545a3f5011d62d156c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2196615433339442119
 GameObject:
   m_ObjectHideFlags: 0

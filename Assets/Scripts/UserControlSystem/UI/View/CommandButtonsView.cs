@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CommandButtonsView : MonoBehaviour
 {
-	public Action<ICommandExecutor> OnClick;
+	public Action<ICommandExecutor, ICommandsQueue> OnClick;
 
 	[SerializeField] private GameObject _attackButton;
 	[SerializeField] private GameObject _moveButton;
@@ -49,14 +49,14 @@ public class CommandButtonsView : MonoBehaviour
 		_produceUnitButton.GetComponent<Selectable>().interactable = value;
 	}
 
-	public void MakeLayout(IEnumerable<ICommandExecutor> commandExecutors)
+	public void MakeLayout(IEnumerable<ICommandExecutor> commandExecutors, ICommandsQueue queue)
 	{
 		foreach (var currentExecutor in commandExecutors)
 		{
 			var buttonGameObject = getButtonGameObjectByType(currentExecutor.GetType());
 			buttonGameObject.SetActive(true);
 			var button = buttonGameObject.GetComponent<Button>();
-			button.onClick.AddListener(() => OnClick?.Invoke(currentExecutor));
+			button.onClick.AddListener(() => OnClick?.Invoke(currentExecutor, queue));
 		}
 	}
 

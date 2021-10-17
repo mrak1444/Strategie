@@ -3,7 +3,7 @@ using Zenject;
 using UniRx;
 using System;
 
-public class BottomCenterPresenter : MonoBehaviour
+public sealed class BottomCenterPresenter : MonoBehaviour
 {
     [SerializeField] private GameObject _uiHolder;
 
@@ -29,14 +29,17 @@ public class BottomCenterPresenter : MonoBehaviour
             {
                 _productionQueueAddCt = unitProducer.Queue
                         .ObserveAdd()
+                        .ObserveOnMainThread()
                         .Subscribe(addEvent => view.SetTask(addEvent.Value, addEvent.Index));
 
                 _productionQueueRemoveCt = unitProducer.Queue
                         .ObserveRemove()
+                        .ObserveOnMainThread()
                         .Subscribe(removeEvent => view.SetTask(null, removeEvent.Index));
 
                 _productionQueueReplaceCt = unitProducer.Queue
                         .ObserveReplace()
+                        .ObserveOnMainThread()
                         .Subscribe(replaceEvent => view.SetTask(replaceEvent.NewValue, replaceEvent.Index));
 
                 _cancelButtonCts = view.CancelButtonClicks.Subscribe(unitProducer.Cancel);

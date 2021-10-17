@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using Zenject;
 
 public class CommandButtonsModel
@@ -15,7 +16,7 @@ public class CommandButtonsModel
 
 	private bool _commandIsPending;
 
-	public void OnCommandButtonClicked(ICommandExecutor commandExecutor)
+	public void OnCommandButtonClicked(ICommandExecutor commandExecutor, ICommandsQueue commandsQueue)
 	{
 		if (_commandIsPending)
 		{
@@ -24,16 +25,20 @@ public class CommandButtonsModel
 		_commandIsPending = true;
 		OnCommandAccepted?.Invoke(commandExecutor);
 
-		_unitProducer.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandExecutor, command));
-		_attacker.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandExecutor, command));
-		_stopper.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandExecutor, command));
-		_mover.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandExecutor, command));
-		_patroller.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandExecutor, command));
+		_unitProducer.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandsQueue, command));
+		_attacker.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandsQueue, command));
+		_stopper.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandsQueue, command));
+		_mover.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandsQueue, command));
+		_patroller.ProcessCommandExecutor(commandExecutor, command => executeCommandWrapper(commandsQueue, command));
 	}
 
-	public void executeCommandWrapper(ICommandExecutor commandExecutor, object command)
+	public void executeCommandWrapper(ICommandsQueue commandsQueue, object command)
 	{
-		commandExecutor.ExecuteCommand(command);
+		if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+		{
+			commandsQueue.Clear();
+		}
+		commandsQueue.EnqueueCommand(command);
 		_commandIsPending = false;
 		OnCommandSent?.Invoke();
 	}
