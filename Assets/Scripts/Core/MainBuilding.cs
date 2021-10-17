@@ -2,26 +2,16 @@ using UnityEngine;
 
 public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
 {
-	public float Health
-	{
-		get
-		{
-			return _health;
+    public float Health => _health;
+    public float MaxHealth => _maxHealth;
+    public Transform PivotPoint => _pivotPoint;
+    public Sprite Icon => _icon;
 
-		}
-		set
-		{
-			_health -= value;
-			Debug.Log(Health);
-		}
-	}
-	public float MaxHealth => _maxHealth;
-	public Sprite Icon => _icon;
+    public Vector3 RallyPoint { get; set; }
 
-    public Transform PivotPoint => transform;
+    [SerializeField] private float _maxHealth = 1000;
+    [SerializeField] private Sprite _icon;
+    [SerializeField] private Transform _pivotPoint;
 
-	[SerializeField] private float _maxHealth = 1000;
-	[SerializeField] private Sprite _icon;
-
-	private float _health = 1000;
+    private float _health = 1000;
 }
