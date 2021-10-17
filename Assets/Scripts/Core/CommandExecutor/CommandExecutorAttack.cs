@@ -10,6 +10,6 @@ public class CommandExecutorAttack : CommandExecutorBase<IAttackCommand>
 
     private void Health(IAttackCommand command)
     {
-        //command.SelecAttack.Health = 10;
+        command.SelecAttack.Health = 10;
     }
 }
