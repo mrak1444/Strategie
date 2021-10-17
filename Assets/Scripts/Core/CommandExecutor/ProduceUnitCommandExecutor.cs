@@ -1,18 +1,16 @@
 using System.Threading.Tasks;
 using UniRx;
 using UnityEngine;
-using Zenject;
 using Random = UnityEngine.Random;
 
 public class ProduceUnitCommandExecutor : CommandExecutorBase<IProduceUnitCommand>, IUnitProducer
 {
-
     public IReadOnlyReactiveCollection<IUnitProductionTask> Queue => _queue;
 
     [SerializeField] private Transform _unitsParent;
+    [SerializeField] private int _maximumUnitsInQueue = 6;
 
     private ReactiveCollection<IUnitProductionTask> _queue = new ReactiveCollection<IUnitProductionTask>();
-    private DiContainer _diContainer;
 
     private void Update()
     {
@@ -26,7 +24,7 @@ public class ProduceUnitCommandExecutor : CommandExecutorBase<IProduceUnitComman
         if (innerTask.TimeLeft <= 0)
         {
             removeTaskAtIndex(0);
-            _diContainer.InstantiatePrefab(innerTask.UnitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
+            Instantiate(innerTask.UnitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
         }
     }
 
