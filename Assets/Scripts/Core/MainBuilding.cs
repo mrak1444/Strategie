@@ -19,7 +19,9 @@ public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
 
     public Transform PivotPoint => transform;
 
-    [SerializeField] private Transform _unitsParent;
+	public Vector3 RallyPoint { get; set; }
+
+	[SerializeField] private Transform _unitsParent;
 
 	[SerializeField] private float _maxHealth = 1000;
 	[SerializeField] private Sprite _icon;
