@@ -1,4 +1,4 @@
 public interface IAttackCommand: ICommand
 {
-    public IAttackable SelecAttack { get; }
+    public IAttackable Target { get; }
 }

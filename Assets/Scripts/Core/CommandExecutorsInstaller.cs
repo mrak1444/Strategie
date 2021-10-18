@@ -10,5 +10,9 @@ public sealed class CommandExecutorsInstaller : MonoInstaller
             var baseType = executor.GetType().BaseType;
             Container.Bind(baseType).FromInstance(executor);
         }
+
+        Container.Bind<IHealthHolder>().FromComponentInChildren();
+        Container.Bind<float>().WithId("AttackDistance").FromInstance(5f);
+        Container.Bind<int>().WithId("AttackPeriod").FromInstance(1400);
     }
 }

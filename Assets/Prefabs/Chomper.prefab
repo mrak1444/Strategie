@@ -2708,6 +2708,8 @@ GameObject:
   - component: {fileID: 6056187796852803235}
   - component: {fileID: 1679709528736504560}
   - component: {fileID: 3633731377708094389}
+  - component: {fileID: 6335961968762760091}
+  - component: {fileID: 7788608482496829801}
   m_Layer: 0
   m_Name: Chomper
   m_TagString: Untagged
@@ -2764,6 +2766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _icon: {fileID: 21300000, guid: c40931837ffea0c40944d1f2c5cac1de, type: 3}
+  _animator: {fileID: 2196615433346867207}
+  _stopCommand: {fileID: 1581357526082124486}
+  _damage: 25
 --- !u!65 &8414041085721459727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2804,6 +2809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68304ff2b1d83c4fab59068b0be72c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+  _stopCommandExecutor: {fileID: 0}
 --- !u!114 &6073454324192137915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2905,6 +2912,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 3633731377708094389}
+  - {fileID: 3633731377708094389}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -2918,6 +2926,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12c575081de6b3545a3f5011d62d156c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6335961968762760091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196615433339442117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 882bc54e3f7272d46809f19b784f8dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _factionId: 1
+--- !u!114 &7788608482496829801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196615433339442117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22529f1b1454dcd459d7cd4270d32670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2196615433339442119

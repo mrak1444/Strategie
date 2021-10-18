@@ -25,4 +25,17 @@ public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
 	[SerializeField] private Sprite _icon;
 
 	private float _health = 1000;
+
+	public void RecieveDamage(int amount)
+	{
+		if (_health <= 0)
+		{
+			return;
+		}
+		_health -= amount;
+		if (_health <= 0)
+		{
+			Destroy(gameObject);
+		}
+	}
 }

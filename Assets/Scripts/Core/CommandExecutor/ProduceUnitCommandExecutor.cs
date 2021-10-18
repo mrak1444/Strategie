@@ -26,7 +26,9 @@ public class ProduceUnitCommandExecutor : CommandExecutorBase<IProduceUnitComman
         {
             removeTaskAtIndex(0);
             //Instantiate(innerTask.UnitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
-            _diContainer.InstantiatePrefab(innerTask.UnitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
+            var instance = _diContainer.InstantiatePrefab(innerTask.UnitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
+            var factionMember = instance.GetComponent<FactionMember>();
+            factionMember.SetFaction(GetComponent<FactionMember>().FactionId);
         }
     }
 

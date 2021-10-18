@@ -1,9 +1,9 @@
 public class AttackCommand : IAttackCommand
 {
-    public IAttackable SelecAttack { get; }
+    public IAttackable Target { get; }
 
     public AttackCommand(IAttackable selecAttack)
     {
-        SelecAttack = selecAttack;
+        Target = selecAttack;
     }
 }

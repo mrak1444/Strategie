@@ -10,6 +10,10 @@ public class OutlineSelectorBuilding : MonoBehaviour, IOutlineSelector
 
     public void SetSelected(bool isSelected)
     {
+        if (this == null)
+        {
+            return;
+        }
         if (isSelected == _isSelectedCache)
         {
             return;
