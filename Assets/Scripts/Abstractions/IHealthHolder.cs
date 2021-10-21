@@ -1,5 +1,5 @@
 public interface IHealthHolder
 {
-	float Health { get; set; }
+	float Health { get; }
 	float MaxHealth { get; }
 }

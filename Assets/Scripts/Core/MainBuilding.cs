@@ -23,8 +23,21 @@ public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
 
 	[SerializeField] private float _maxHealth = 1000;
 	[SerializeField] private Sprite _icon;
+	[SerializeField] private Vector3 _rallyPoint;
 
 	private float _health = 1000;
+
+	public Vector3 RallyPoint 
+	{
+		get 
+		{
+			return _rallyPoint;
+		}
+        set
+        {
+			_rallyPoint = value;
+        }
+	}
 
 	public void RecieveDamage(int amount)
 	{

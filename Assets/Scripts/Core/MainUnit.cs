@@ -2,18 +2,8 @@ using UnityEngine;
 
 public class MainUnit : MonoBehaviour, ISelectable, IAttackable, IDamageDealer
 {
-	public float Health 
-	{
-        get
-        {
-			return _health;
-
-		}
-        set
-        {
-			_health -= value;
-        }
-	}
+	public float Health => _health;
+	
 	public float MaxHealth => _maxHealth;
 	public Sprite Icon => _icon;
 
