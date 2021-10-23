@@ -15,6 +15,7 @@ public class MouseInteractionsPresenter : MonoBehaviour
     [SerializeField] private Transform _groundTransform;
 
     private Plane _groundPlane;
+    [SerializeField] private CommandButtonsView _commandButtonsView;
 
     [Inject]
     private void Init()
@@ -55,6 +56,7 @@ public class MouseInteractionsPresenter : MonoBehaviour
             }
             else if (_groundPlane.Raycast(ray, out var enter))
             {
+                _commandButtonsView.ClickMoveButton();
                 _groundClicksRMB.SetValue(ray.origin + ray.direction * enter);
             }
         });
