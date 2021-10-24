@@ -18,7 +18,7 @@ public class UiModelInstaller : MonoInstaller
 		Container.Bind<string>().WithId("Chomper").FromInstance("Chomper");
 
 		Container.Bind<CommandCreatorBase<IProduceUnitCommand>>()
-		.To<ProduceUnitCommandCommandCreatorChomper>().AsTransient();
+		.To<ProduceUnitCommandCommandCreator>().AsTransient();
 		Container.Bind<CommandCreatorBase<IAttackCommand>>()
 		.To<AttackCommandCommandCreator>().AsTransient();
 		Container.Bind<CommandCreatorBase<IMoveCommand>>()
