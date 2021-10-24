@@ -1,4 +1,4 @@
-public class ProduceUnitCommandHeir : ProduceUnitCommand
+public class ProduceUnitCommandHeir : ProduceUnitCommandChomper
 {
 
 }
