@@ -8,5 +8,5 @@ public class ProduceUnitCommand : IProduceUnitCommand
 	[Inject(Id = "Chomper")] public float ProductionTime { get; }
 
 	public GameObject UnitPrefab => _unitPrefab;
-	[InjectAsset("Chomper")] private GameObject _unitPrefab;
+	[InjectAsset("Chomper")] private GameObject _unitPrefab; //
 }

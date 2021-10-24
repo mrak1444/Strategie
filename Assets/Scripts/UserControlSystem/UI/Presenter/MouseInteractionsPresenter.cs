@@ -16,6 +16,8 @@ public class MouseInteractionsPresenter : MonoBehaviour
 
     private Plane _groundPlane;
 
+    [SerializeField] private CommandButtonsView _commandButtonsView;
+
     [Inject]
     private void Init()
     {
@@ -45,6 +47,7 @@ public class MouseInteractionsPresenter : MonoBehaviour
             if (weHit<ISelectable>(hits, out var selectable))
             {
                 _selectedObject.SetValue(selectable);
+                _commandButtonsView.MoveClick();
             }
         });
         rmbHitsStream.Subscribe((ray, hits) =>
@@ -56,6 +59,7 @@ public class MouseInteractionsPresenter : MonoBehaviour
             else if (_groundPlane.Raycast(ray, out var enter))
             {
                 _groundClicksRMB.SetValue(ray.origin + ray.direction * enter);
+                _commandButtonsView.MoveClick();
             }
         });
     }

@@ -5035,6 +5035,7 @@ MonoBehaviour:
   _groundClicksRMB: {fileID: 11400000, guid: 72fe5cce77a2759409be7d043d4e3e0d, type: 2}
   _attackablesRMB: {fileID: 11400000, guid: 00000d4cd1a98bd4395f85816585ad7e, type: 2}
   _groundTransform: {fileID: 624734013}
+  _commandButtonsView: {fileID: 1738995600}
 --- !u!4 &1706303363
 Transform:
   m_ObjectHideFlags: 0
