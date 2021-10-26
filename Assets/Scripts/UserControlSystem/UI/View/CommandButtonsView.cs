@@ -65,6 +65,11 @@ public class CommandButtonsView : MonoBehaviour
 		_moveButton.GetComponent<Button>().onClick.Invoke();
 	}
 
+	public void AttackClick()
+    {
+		_attackButton.GetComponent<Button>().onClick.Invoke();
+	}
+
 	private GameObject getButtonGameObjectByType(Type executorInstanceType)
 	{
 		return _buttonsByExecutorType
