@@ -24,10 +24,9 @@ GameObject:
   - component: {fileID: 3342558583133970363}
   - component: {fileID: 4210359993391553788}
   - component: {fileID: 8210197129736744072}
-  - component: {fileID: 2232247391329141904}
   m_Layer: 0
   m_Name: Ellen
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,19 +269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22529f1b1454dcd459d7cd4270d32670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2232247391329141904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8597646062224106927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b8606f9f476ae43af9d5eeb62eef77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 5
 --- !u!1 &8597646062224108033
 GameObject:
   m_ObjectHideFlags: 0
